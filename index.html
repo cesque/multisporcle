@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forkle</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.scss">
+</head>
+<body>
+    <div class="app">
+        <div class="connect-dialog" v-if="!connected">
+            <p>enter room code: </p>
+            <input
+                type="text"
+                class="connect-dialog__room-code"
+                size="4"
+                maxlength="4"
+                v-model="roomCode">
+            <button 
+                type="button"
+                class="connect-dialog__connect-button"
+                v-on:click="connect"
+            >
+                connect
+            </button>
+        </div>
+
+        <div class="quiz-container" v-else>
+            <h2>{{ room.currentQuiz }}</h2>
+            <div class="input-container" v-if="isQuizActive">
+                <input type="text" v-model="answer" placeholder="type an answer...">
+            </div>
+            <div class="waiting-container" v-else>
+                <p>please wait...</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

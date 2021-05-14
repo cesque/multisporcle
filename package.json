@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "sporclemultiplayer",
+  "version": "1.0.0",
+  "main": "script.user.js",
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "corpora": "github:dariusk/corpora",
+    "ws": "^7.4.3"
+  },
+  "devDependencies": {
+    "sass": "^1.32.8"
+  }
+}
